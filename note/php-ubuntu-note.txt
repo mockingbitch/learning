@@ -1,0 +1,5 @@
+Run composer: php8.1(7.4) /usr/local/bin/composer update(install)
+
+cake required: sudo apt-get install php5-intl
+
+Switch version of php: sudo update-alternatives --config php

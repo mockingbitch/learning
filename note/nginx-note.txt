@@ -1,0 +1,29 @@
+# Application with PHP 8.1
+#
+server {
+	listen 80;
+
+	root /var/www/php81/thelight-lar9/public;
+
+	index index.html index.htm index.php;
+	server_name thelight.nginx;
+	charset utf-8;
+
+	location / {
+	  try_files $uri $uri/ /index.php?$query_string;
+	}
+
+	error_page 404 /index.php;
+
+	location ~* \.php$ {
+		# With php-fpm unix sockets
+		fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+		include         fastcgi_params;
+		fastcgi_param   SCRIPT_FILENAME    $document_root$fastcgi_script_name;
+		fastcgi_param   SCRIPT_NAME        $fastcgi_script_name;
+	}
+
+	location ~ /\.(?!well-known).* {
+	deny all;
+	}
+}

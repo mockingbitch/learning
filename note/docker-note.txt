@@ -1,0 +1,2 @@
+permission denied while trying to connect to the docker daemon socket:
+chmod 777 /var/run/docker.sock

@@ -1,0 +1,14 @@
+go env -w GO111MODULE=off (go.mod outside directory)
+- get gorm: 
+	go get -u gorm.io/gorm
+	go get -u gorm.io/driver/mysql
+- gin gonic:
+	go get -u github.com/gin-gonic/gin
+- bcrypt:
+	go get -u golang.org/x/crypto/bcrypt
+- jwt:
+	go get -u github.com/golang-jwt/jwt/v4
+- daemon
+	go get github.com/githubnemo/CompileDaemon
+- dotenv
+	go get github.com/joho/godotenv
